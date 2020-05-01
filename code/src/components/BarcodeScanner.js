@@ -6,11 +6,7 @@ export const BarcodeScanner = ({ className, onDetected }) => {
   const cameraDivRef = useRef();
 
   Quagga.onDetected((data) => {
-<<<<<<< HEAD
     onDetected(data.code);
-=======
-    onDetected(data.codeResult.code);
->>>>>>> pie chart and save
   });
 
   useLayoutEffect(() => {

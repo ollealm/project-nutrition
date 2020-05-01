@@ -17,10 +17,7 @@ export const barcodeReducer = createSlice({
       state.productsArray.splice(action.payload, 1);
     },
   },
-
 })
-
-
 
 export const getProduct = (code) => {
   return dispatch => {
@@ -30,7 +27,7 @@ export const getProduct = (code) => {
         if (json.status === 1) {
           dispatch(barcodeReducer.actions.setProduct(json.product))
         }
-        else console.log("code not valid, try again");
+        else console.log("Code not valid, try again");
       });
   }
 };
