@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
+=======
+    "@reduxjs/toolkit": "^1.3.5",
+>>>>>>> pie chart and save
     "babel-eslint": "^10.0.3",
     "eslint": "^6.7.1",
     "eslint-config-airbnb": "^18.0.1",
@@ -13,7 +17,15 @@
     "quagga": "^0.12.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+<<<<<<< HEAD
     "react-scripts": "^3.3.0"
+=======
+    "react-redux": "^7.2.0",
+    "react-scripts": "^3.3.0",
+    "redux": "^4.0.5",
+    "styled-components": "^5.1.0",
+    "thunk": "0.0.1"
+>>>>>>> pie chart and save
   },
   "scripts": {
     "start": "react-scripts start",
