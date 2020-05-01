@@ -52,6 +52,11 @@ const ChartContainer = styled.div`
 
 const Click = styled.div`
   cursor: pointer;
+  border-radius: 50%;
+  transition: .2s;
+  &:hover {
+    transform: scale(1.03);
+  }
 `
 
 const Remove = styled(ButtonBracket)`
