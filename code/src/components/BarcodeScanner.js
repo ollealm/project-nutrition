@@ -7,7 +7,7 @@ export const BarcodeScanner = ({ className, onDetected }) => {
   const cameraDivRef = useRef();
 
   Quagga.onDetected((data) => {
-    onDetected(data.code);
+    onDetected(data.codeResult.code);
   });
 
   useLayoutEffect(() => {
@@ -38,17 +38,10 @@ export const BarcodeScanner = ({ className, onDetected }) => {
   }, []);
 
   return (
-<<<<<<< HEAD
-    <>
-      {initializing && <div>Starting camera...</div>}
-      <div ref={cameraDivRef} className={className} />
-    </>
-=======
     <Container>
-      {initializing && <H2>Starting camera</H2>}
+      {initializing && <H2>Starting camera...</H2>}
       <Div ref={cameraDivRef} className={className} />
     </Container>
->>>>>>> added color guide
   );
 };
 
