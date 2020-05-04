@@ -48,6 +48,9 @@ const ChartContainer = styled.div`
   @media (min-width: 768px) {
     width: 25%;
   }
+  @media (max-width: 400px) {
+    width: 100%;
+  }
 `
 
 const Click = styled.div`

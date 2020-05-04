@@ -37,17 +37,17 @@ export const ScanBarcode = () => {
             Start scanner
           </Button>
         )}
-        <div>
+        <Manual>
           <label>
             Or enter barcode:{" "}
-            <Input type="text" onChange={(e) => onDetected(e.target.value)} ></Input>
+            <Input type="text" onChange={(e) => onDetected(e.target.value)} />
           </label>
           <Links>
             <ButtonBracket onClick={() => dispatch(getProduct(7311070347272))}>Giflar</ButtonBracket>
             <ButtonBracket onClick={() => dispatch(getProduct(7300156573186))}>Milk</ButtonBracket>
             <ButtonBracket onClick={() => dispatch(getProduct(7318693440007))}>Potatos</ButtonBracket>
           </Links>
-        </div>
+        </Manual>
       </Code>
 
       {showScanner && (
@@ -70,18 +70,33 @@ const Wrapper = styled.div`
   margin: auto;
 `
 
+const Manual = styled.div`
+  text-align: center;
+  width:fit-content;
+`
+
 const Code = styled.div`
   display: flex;
-  justify-content: space-around;
-  width: 100%;
+  justify-content: space-between;
+  align-items: center;
   margin: 40px 0;
+  flex-direction: column;
+  height: 150px;
+  width: 80%;
+  @media (min-width: 768px) {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
 `
 
 
 const Input = styled.input`
   border: 1px solid #ccc;
   border-radius: 3px;
-  margin: 0 10px 0 0;
+  margin: 0;
   padding: 10px;
   width: 200px;
   height: 40px;
@@ -108,6 +123,11 @@ const Input = styled.input`
 `;
 
 const Links = styled.div`
-  margin-right: 10px;
+  margin-left: auto;
   text-align: right;
+  width: fit-content;
+
+  @media (max-width: 488px) {
+    margin: auto;
+  }
 `
