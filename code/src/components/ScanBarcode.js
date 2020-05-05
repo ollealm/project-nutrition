@@ -7,6 +7,7 @@ import { ShowProduct } from 'components/ShowProduct';
 import { ListSaved } from 'components/ListSaved';
 import { NotFound } from 'components/NotFound';
 import { Button, ButtonBracket } from 'lib/Buttons';
+import { BarcodeAnimation } from 'lib/BarcodeAnimation';
 import styled from 'styled-components';
 
 export const ScanBarcode = () => {
@@ -61,6 +62,7 @@ export const ScanBarcode = () => {
       )}
 
       <NotFound />
+      {!product && !showScanner && (<BarcodeAnimation />)}
       {product && (<ShowProduct />)}
       {productsArray.length > 0 && (<ListSaved />)}
     </Wrapper>
