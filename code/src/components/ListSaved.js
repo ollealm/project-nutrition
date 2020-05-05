@@ -13,7 +13,7 @@ export const ListSaved = () => {
   return (
     <Wrapper>
       {productsArray.map((product, index) => (
-        <ChartContainer>
+        <ChartContainer key={index}>
           <h4>
             {product.product_name}
             <Remove type="button" onClick={() => dispatch(barcodeReducer.actions.removeProduct(index))}>

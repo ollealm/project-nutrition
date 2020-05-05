@@ -11,24 +11,6 @@ export const LoadingIndicator = () => {
   )
 }
 
-// const Loading = styled.div`
-//   position: absolute;
-//   top: 350px;
-//   left: 50%;
-//   transform: translateX(-50%);
-//   width: 50px;
-//   height: 50px;
-//   border: 3px dotted lightgrey;
-//   border-radius: 50%;
-//   opacity: 0;
-//   animation: rotate 5s linear infinite ;
-//   animation-delay: 0.1s;
-//   @keyframes rotate {
-//     0% { transform: rotate(0deg); opacity: 1;}
-//     100% { transform: rotate(360deg); opacity: 1;}
-//   }
-// `
-
 const Loading = styled.div`
   position: fixed;
   top: 40%;

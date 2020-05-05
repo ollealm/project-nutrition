@@ -1,12 +1,22 @@
-# Project Nutrition
+# Project Nutrition — [link](https://macronutrient-chart.netlify.app/)
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+A web app for scanning barcodes on food packages to retrieve product information from the open source database openfoodfacts.org
 
 ## The problem
+The scanner was built around a provided Quagga component. A Redux store with reducers stores the product information and it's possible to save a list of products. Redux thunk middleware handles the asynchronous api call and store the state of the app when loading. 
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The data is presented as pie charts over the macronutrient ratio in the food items. This is done with the Conic Gradient property in CSS. Styling is done using Styled Components
+
+Try it out using the links under the input field if you don't have any food item around.
+
+## Core Tech
+React
+React Redux
+Redux Thunk
+Redux Toolkit
+Styled Components
+CSS3
+
 
 ## View it live
 

@@ -1,15 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import styled from 'styled-components';
 
 export const NotFound = () => {
   const notFound = useSelector((store) => store.ui.isNotFound);
   return (
     <>
-      {notFound && <TryAgain>Code not found, please try again!</TryAgain>}
+      {notFound && <div>Code not found, please try again!</div>}
     </>
   )
 }
-
-const TryAgain = styled.div`
-`

@@ -5,7 +5,6 @@ import { PieChart } from 'components/PieChart';
 import styled from 'styled-components';
 import { Button } from 'lib/Buttons';
 
-
 export const ShowProduct = () => {
   const product = useSelector(store => store.reducer.product)
   const { product_name: name } = product
@@ -20,35 +19,38 @@ export const ShowProduct = () => {
     <Wrapper>
       <div>
         <H3>{name}</H3>
-
-        <Tr>
-          <Th>Nutrients</Th>
-          <Th>Per 100g</Th>
-        </Tr>
-        <Tr>
-          <Td>Calories</Td>
-          <Td>{product.nutriments['energy-kcal_value'] ? `${product.nutriments['energy-kcal_value']} kcal` : '-'}</Td>
-        </Tr>
-        <Tr>
-          <Td>Fat</Td>
-          <Td>{fat ? `${fat} g` : '-'}</Td>
-        </Tr>
-        <Tr>
-          <Td>Carbohydrates</Td>
-          <Td>{carb ? `${carb} g` : '-'}</Td>
-        </Tr>
-        <Tr>
-          <Td>Sugars</Td>
-          <Td>{sugar ? `${sugar} g` : '-'}</Td>
-        </Tr>
-        <Tr>
-          <Td>Fiber</Td>
-          <Td>{product.nutriments.fiber_100g ? `${product.nutriments.fiber_100g} g` : '-'}</Td>
-        </Tr>
-        <Tr>
-          <Td>Proteins</Td>
-          <Td>{protein ? `${protein} g` : '-'}</Td>
-        </Tr>
+        <table>
+          <tbody>
+            <Tr>
+              <Th>Nutrients</Th>
+              <Th>Per 100g</Th>
+            </Tr>
+            <Tr>
+              <Td>Calories</Td>
+              <Td>{product.nutriments['energy-kcal_value'] ? `${product.nutriments['energy-kcal_value']} kcal` : '-'}</Td>
+            </Tr>
+            <Tr>
+              <Td>Fat</Td>
+              <Td>{fat ? `${fat} g` : '-'}</Td>
+            </Tr>
+            <Tr>
+              <Td>Carbohydrates</Td>
+              <Td>{carb ? `${carb} g` : '-'}</Td>
+            </Tr>
+            <Tr>
+              <Td>Sugars</Td>
+              <Td>{sugar ? `${sugar} g` : '-'}</Td>
+            </Tr>
+            <Tr>
+              <Td>Fiber</Td>
+              <Td>{product.nutriments.fiber_100g ? `${product.nutriments.fiber_100g} g` : '-'}</Td>
+            </Tr>
+            <Tr>
+              <Td>Proteins</Td>
+              <Td>{protein ? `${protein} g` : '-'}</Td>
+            </Tr>
+          </tbody>
+        </table>
         <AddButton type="button" onClick={() => saveCurrent()}>
           Add
         </AddButton>
@@ -78,7 +80,7 @@ const Wrapper = styled.div`
   }
 `
 const Tr = styled.tr`
-  &:nth-child(odd) {
+  &:nth-child(even) {
   background-color: #ddd;
 }
 `

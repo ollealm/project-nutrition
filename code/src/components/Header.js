@@ -5,11 +5,10 @@ export const Header = () => {
   return (
     <Wrapper>
       <h1>Macronutrient charts</h1>
-      <H3>Scan a product for calorie ratio </H3>
+      <H3>Scan a product to see the calorie ratio </H3>
     </Wrapper>
   )
 }
-
 
 const Wrapper = styled.div`
   display: flex;
