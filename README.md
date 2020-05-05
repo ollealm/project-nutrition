@@ -1,4 +1,6 @@
-# Macronutrients &emsp; [Live Link &#10555;](https://macronutrient-chart.netlify.app/)
+# Macronutrient Charts &emsp; [View Live &#10555;](https://macronutrient-chart.netlify.app/)
+
+![Screenshot](proj-scan-food.jpg)
 
 A web app for scanning barcodes on food packages to retrieve product information from the open source database openfoodfacts.org
 
