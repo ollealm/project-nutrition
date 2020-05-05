@@ -1,6 +1,4 @@
-# Macronutrient Charts &emsp; [View Live &#10555;](https://macronutrient-chart.netlify.app/)
-
-![Screenshot](proj-scan-food.jpg)
+# Macronutrient Charts&ensp;|&ensp;[View Live &#10555;](https://macronutrient-chart.netlify.app/)
 
 A web app for scanning barcodes on food packages to retrieve product information from the open source database openfoodfacts.org
 
@@ -18,6 +16,8 @@ Try it out using the links under the input field if you don't have any food item
 * Redux Toolkit
 * Styled Components
 * CSS3
+
+![Screenshot](proj-scan-food.jpg)
 
 ## View it live
 https://macronutrient-chart.netlify.app/
