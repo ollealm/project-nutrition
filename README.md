@@ -17,7 +17,7 @@ Try it out using the links under the input field if you don't have any food item
 * CSS3
 
 ## Screenshot
-![Screenshot](proj-scan-food.jpg)
+![Screenshot](screenshot.png)
 
 ## View it live
 https://macronutrient-chart.netlify.app/
