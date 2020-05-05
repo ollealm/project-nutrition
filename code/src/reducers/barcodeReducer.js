@@ -9,7 +9,7 @@ export const barcodeReducer = createSlice({
   },
   reducers: {
     setProduct: (state, action) => {
-      state.product = action.payload; //json.product from API
+      state.product = action.payload; // json.product from API
     },
     saveProduct: (state, action) => {
       state.productsArray.push(action.payload);
@@ -20,7 +20,7 @@ export const barcodeReducer = createSlice({
   },
 })
 
-//Thunk
+// Thunk
 export const getProduct = (code) => {
   return dispatch => {
     dispatch(ui.actions.setLoading(true))
@@ -29,8 +29,10 @@ export const getProduct = (code) => {
       .then((json) => {
         if (json.status === 1) {
           dispatch(barcodeReducer.actions.setProduct(json.product))
+          dispatch(ui.actions.setNotFound(false))
         } else {
           console.log('Code not valid, try again')
+          dispatch(ui.actions.setNotFound(true))
         }
         dispatch(ui.actions.setLoading(false));
       });

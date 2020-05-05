@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { barcodeReducer } from 'reducers/barcodeReducer'
-import { PieChart } from "components/PieChart";
+import { PieChart } from 'components/PieChart';
 import styled from 'styled-components';
 import { Button } from 'lib/Buttons';
 
@@ -10,7 +10,6 @@ export const ShowProduct = () => {
   const product = useSelector(store => store.reducer.product)
   const { product_name: name } = product
   const { fat_100g: fat, carbohydrates_100g: carb, sugars_100g: sugar, proteins_100g: protein } = product.nutriments
-  const productsArray = useSelector(store => store.reducer.productsArray)
   const dispatch = useDispatch();
 
   const saveCurrent = () => {
@@ -28,27 +27,27 @@ export const ShowProduct = () => {
         </Tr>
         <Tr>
           <Td>Calories</Td>
-          <Td>{product.nutriments["energy-kcal_value"] ? product.nutriments["energy-kcal_value"] + " kcal" : "-"}</Td>
+          <Td>{product.nutriments['energy-kcal_value'] ? `${product.nutriments['energy-kcal_value']} kcal` : '-'}</Td>
         </Tr>
         <Tr>
           <Td>Fat</Td>
-          <Td>{fat ? fat + " g" : "-"}</Td>
+          <Td>{fat ? `${fat} g` : '-'}</Td>
         </Tr>
         <Tr>
           <Td>Carbohydrates</Td>
-          <Td>{carb ? carb + " g" : "-"}</Td>
+          <Td>{carb ? `${carb} g` : '-'}</Td>
         </Tr>
         <Tr>
           <Td>Sugars</Td>
-          <Td>{sugar ? sugar + " g" : "-"}</Td>
+          <Td>{sugar ? `${sugar} g` : '-'}</Td>
         </Tr>
         <Tr>
           <Td>Fiber</Td>
-          <Td>{product.nutriments.fiber_100g ? product.nutriments.fiber_100g + " g" : "-"}</Td>
+          <Td>{product.nutriments.fiber_100g ? `${product.nutriments.fiber_100g} g` : '-'}</Td>
         </Tr>
         <Tr>
           <Td>Proteins</Td>
-          <Td>{protein ? protein + " g" : "-"}</Td>
+          <Td>{protein ? `${protein} g` : '-'}</Td>
         </Tr>
         <AddButton type="button" onClick={() => saveCurrent()}>
           Add

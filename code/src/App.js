@@ -21,8 +21,8 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Header />
-      <ScanBarcode />
       <LoadingIndicator />
+      <ScanBarcode />
     </Provider>
   );
 };

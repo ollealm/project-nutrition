@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { BarcodeScanner } from 'components/BarcodeScanner'
 import { getProduct, barcodeReducer } from 'reducers/barcodeReducer'
+import { ui } from 'reducers/ui'
 import { ShowProduct } from 'components/ShowProduct';
 import { ListSaved } from 'components/ListSaved';
+import { NotFound } from 'components/NotFound';
 import { Button, ButtonBracket } from 'lib/Buttons';
 import styled from 'styled-components';
 
@@ -16,17 +18,21 @@ export const ScanBarcode = () => {
 
   const onDetected = (code) => {
     setShowScanner(false);
-    if (product && product.id === code) { // Don't fetch same product twice
-      console.log('Code same as current product');
-      return;
-    };
-    if (productsArray.length > 0 && productsArray.find(product => product.id === code)) {
-      console.log('Code in saved products');
-      dispatch(barcodeReducer.actions.setProduct(productsArray.find(product => product.id === code)))
-      return;
-    };
-    console.log(`New code: ${code}`);
-    dispatch(getProduct(code));
+    if (code > 1000000) {
+      if (product && product.id === code) { // Don't fetch same product twice
+        console.log('Code same as current product');
+        dispatch(ui.actions.setNotFound(false))
+        return;
+      }
+      if (productsArray.length > 0 && productsArray.find(product => product.id === code)) {
+        console.log('Code in saved products');
+        dispatch(ui.actions.setNotFound(false))
+        dispatch(barcodeReducer.actions.setProduct(productsArray.find(product => product.id === code)))
+        return;
+      }
+      console.log(`New code: ${code}`);
+      dispatch(getProduct(code));
+    }
   };
 
   return (
@@ -43,9 +49,9 @@ export const ScanBarcode = () => {
             <Input type="text" onChange={(e) => onDetected(e.target.value)} />
           </label>
           <Links>
-            <ButtonBracket onClick={() => dispatch(getProduct(7311070347272))}>Giflar</ButtonBracket>
-            <ButtonBracket onClick={() => dispatch(getProduct(7300156573186))}>Milk</ButtonBracket>
-            <ButtonBracket onClick={() => dispatch(getProduct(7318693440007))}>Potatos</ButtonBracket>
+            <ButtonBracket onClick={() => onDetected('7311070347272')}>Giflar</ButtonBracket>
+            <ButtonBracket onClick={() => onDetected('7300156573186')}>Milk</ButtonBracket>
+            <ButtonBracket onClick={() => onDetected('7318693440007')}>Potatos</ButtonBracket>
           </Links>
         </Manual>
       </Code>
@@ -54,6 +60,7 @@ export const ScanBarcode = () => {
         <BarcodeScanner onDetected={onDetected} />
       )}
 
+      <NotFound />
       {product && (<ShowProduct />)}
       {productsArray.length > 0 && (<ListSaved />)}
     </Wrapper>
