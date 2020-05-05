@@ -1,4 +1,4 @@
-# Macronutrients  — [Link &#11106;](https://macronutrient-chart.netlify.app/)
+# Macronutrients &emsp; [Link &#11106;](https://macronutrient-chart.netlify.app/)
 
 A web app for scanning barcodes on food packages to retrieve product information from the open source database openfoodfacts.org
 
@@ -10,12 +10,12 @@ The data is presented as pie charts over the macronutrient ratio in the food ite
 Try it out using the links under the input field if you don't have any food item around.
 
 ## Core Tech
-React
-React Redux
-Redux Thunk
-Redux Toolkit
-Styled Components
-CSS3
+* React
+* React Redux
+* Redux Thunk
+* Redux Toolkit
+* Styled Components
+* CSS3
 
 
 ## View it live
