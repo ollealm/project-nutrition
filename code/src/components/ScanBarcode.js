@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { BarcodeScanner } from 'components/BarcodeScanner'
 import { getProduct, barcodeReducer } from 'reducers/barcodeReducer'
-import { ShowProduct } from "components/ShowProduct";
-import { ListSaved } from "components/ListSaved";
+import { ShowProduct } from 'components/ShowProduct';
+import { ListSaved } from 'components/ListSaved';
 import { Button, ButtonBracket } from 'lib/Buttons';
 import styled from 'styled-components';
 
@@ -17,11 +17,11 @@ export const ScanBarcode = () => {
   const onDetected = (code) => {
     setShowScanner(false);
     if (product && product.id === code) { // Don't fetch same product twice
-      console.log(`Code same as current product`);
+      console.log('Code same as current product');
       return;
     };
     if (productsArray.length > 0 && productsArray.find(product => product.id === code)) {
-      console.log(`Code in saved products`);
+      console.log('Code in saved products');
       dispatch(barcodeReducer.actions.setProduct(productsArray.find(product => product.id === code)))
       return;
     };
@@ -39,7 +39,7 @@ export const ScanBarcode = () => {
         )}
         <Manual>
           <label>
-            Or enter barcode:{" "}
+            Or enter barcode:{' '}
             <Input type="text" onChange={(e) => onDetected(e.target.value)} />
           </label>
           <Links>
@@ -91,7 +91,6 @@ const Code = styled.div`
     align-items: flex-start;
   }
 `
-
 
 const Input = styled.input`
   border: 1px solid #ccc;

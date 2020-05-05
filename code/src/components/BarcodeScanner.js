@@ -1,5 +1,5 @@
-import React, { useRef, useState, useLayoutEffect } from "react";
-import Quagga from "quagga";
+import React, { useRef, useState, useLayoutEffect } from 'react';
+import Quagga from 'quagga';
 import styled from 'styled-components';
 
 export const BarcodeScanner = ({ className, onDetected }) => {
@@ -14,17 +14,17 @@ export const BarcodeScanner = ({ className, onDetected }) => {
     Quagga.init(
       {
         inputStream: {
-          name: "Live",
-          type: "LiveStream",
+          name: 'Live',
+          type: 'LiveStream',
           target: cameraDivRef.current,
         },
         decoder: {
-          readers: ["ean_reader"],
+          readers: ['ean_reader'],
         },
       },
       (err) => {
         if (err) {
-          console.error("Failed to initialize reader", err);
+          console.error('Failed to initialize reader', err);
           return;
         }
         Quagga.start();
