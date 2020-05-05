@@ -2,12 +2,11 @@
 
 A web app for scanning barcodes on food packages to retrieve product information from the open source database openfoodfacts.org
 
-## The problem
-The scanner was built around a provided Quagga component. A Redux store with reducers stores the product information and it's possible to save a list of products. Redux thunk middleware handles the asynchronous api call and store the state of the app when loading. 
+The scanner was built around a provided Quagga component. A Redux store with reducers handles the product information and a list of saved products. Redux thunk middleware handles the asynchronous API call and store the state of the app when loading to display a loading spinner. 
 
-The data is presented as pie charts over the macronutrient ratio in the food items. This is done with the Conic Gradient property in CSS. Styling is done using Styled Components.
+The data is presented as pie charts of the macronutrient ratio for the food items. This is done using the Conic Gradient property in CSS. Styling is done with Styled Components.
 
-Try it out using the links under the input field if you don't have any food item around.
+Try it out using the links under the input field if you don't have any food items around.
 
 ## Core Tech
 * React
@@ -17,6 +16,7 @@ Try it out using the links under the input field if you don't have any food item
 * Styled Components
 * CSS3
 
+## Screenshot
 ![Screenshot](proj-scan-food.jpg)
 
 ## View it live
